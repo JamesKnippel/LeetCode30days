@@ -62,3 +62,32 @@ const checkValidString = (s) => {
 
     return true;
 };
+
+
+/* 
+Stack Solution:
+
+var checkValidString = function(s) {
+    let leftStack = [];
+    let astStack = [];
+
+    for (let i = 0; i < s.length; i++) {
+        if (s.charAt(i) === '(') {
+            leftStack.push(i);
+        } else if (s.charAt(i) === ')') {
+            if (leftStack.length > 0) leftStack.pop();
+            else if (astStack.length > 0) astStack.pop();
+            else return false;
+        } else {
+            astStack.push(i);
+        }
+    }
+    if (leftStack.length > astStack.length) return false;
+    while (leftStack.length > 0) {
+        if (leftStack.pop() > astStack.pop()) return false;
+    }
+    return true;
+};
+
+
+*/

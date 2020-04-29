@@ -27,18 +27,12 @@ Example:
 
 // */
 
-/**
- * @param {number} capacity
- */
+
 var LRUCache = function (capacity) {
     this.capacity = capacity;
     this.store = new Map();
 };
 
-/** 
- * @param {number} key
- * @return {number}
- */
 LRUCache.prototype.get = function (key) {
     if (this.store.has(key)) {
         const value = this.store.get(key);
@@ -54,11 +48,6 @@ LRUCache.prototype.get = function (key) {
     }
 };
 
-/** 
- * @param {number} key 
- * @param {number} value
- * @return {void}
- */
 LRUCache.prototype.put = function (key, value) {
     // update cache usage
     this.get(key);
